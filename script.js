@@ -592,3 +592,167 @@ setInterval(
     actualizarContador,
     1000
 );
+
+/* =====================================================
+   AGREGAR AL CALENDARIO
+   Android → Google Calendar
+   iPhone/iPad → Apple Calendar
+   PC → Google Calendar
+===================================================== */
+
+const btnCalendario =
+    document.getElementById("btnCalendario");
+
+if (btnCalendario) {
+
+    btnCalendario.addEventListener("click", function () {
+
+        const titulo =
+            "Boda de Jonny & Pancrasia";
+
+        const descripcion =
+            "Celebración de nuestra boda. " +
+            "¡Nos encantará compartir este día contigo!";
+
+        const ubicacion =
+            "Ciudad, Guatemala";
+
+        // 24 de octubre de 2026
+        // 6:00 PM - 8:00 PM
+
+        const inicio =
+            "20261024T180000";
+
+        const fin =
+            "20261024T200000";
+
+
+        /* ==========================================
+           DETECTAR DISPOSITIVO
+        ========================================== */
+
+        const agente =
+            navigator.userAgent ||
+            navigator.vendor ||
+            window.opera;
+
+        const esAndroid =
+            /Android/i.test(agente);
+
+        const esApple =
+            /iPhone|iPad|iPod/i.test(agente);
+
+
+        /* ==========================================
+           ANDROID
+           GOOGLE CALENDAR
+        ========================================== */
+
+        if (esAndroid) {
+
+            const urlGoogle =
+                "https://calendar.google.com/calendar/render" +
+                "?action=TEMPLATE" +
+                "&text=" +
+                encodeURIComponent(titulo) +
+                "&dates=" +
+                inicio +
+                "/" +
+                fin +
+                "&details=" +
+                encodeURIComponent(descripcion) +
+                "&location=" +
+                encodeURIComponent(ubicacion);
+
+            window.location.href = urlGoogle;
+
+            return;
+        }
+
+
+        /* ==========================================
+           IPHONE / IPAD
+           APPLE CALENDAR
+        ========================================== */
+
+        if (esApple) {
+
+            const calendario =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BODA ELEGANTE//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boda-jonny-pancrasia-2026@boda-elegante
+DTSTAMP:20260901T000000Z
+DTSTART;TZID=America/Guatemala:20261024T180000
+DTEND;TZID=America/Guatemala:20261024T200000
+SUMMARY:${titulo}
+DESCRIPTION:${descripcion}
+LOCATION:${ubicacion}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+            const archivo =
+                new Blob(
+                    [calendario],
+                    {
+                        type:
+                            "text/calendar;charset=utf-8"
+                    }
+                );
+
+            const url =
+                URL.createObjectURL(archivo);
+
+            const enlace =
+                document.createElement("a");
+
+            enlace.href = url;
+
+            enlace.download =
+                "boda-jonny-pancrasia.ics";
+
+            document.body.appendChild(enlace);
+
+            enlace.click();
+
+            document.body.removeChild(enlace);
+
+            setTimeout(function () {
+                URL.revokeObjectURL(url);
+            }, 1000);
+
+            return;
+        }
+
+
+        /* ==========================================
+           PC / LAPTOP
+           GOOGLE CALENDAR
+        ========================================== */
+
+        const urlGooglePC =
+            "https://calendar.google.com/calendar/render" +
+            "?action=TEMPLATE" +
+            "&text=" +
+            encodeURIComponent(titulo) +
+            "&dates=" +
+            inicio +
+            "/" +
+            fin +
+            "&details=" +
+            encodeURIComponent(descripcion) +
+            "&location=" +
+            encodeURIComponent(ubicacion);
+
+        window.open(
+            urlGooglePC,
+            "_blank"
+        );
+
+    });
+
+}
