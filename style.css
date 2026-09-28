@@ -2461,3 +2461,1122 @@ button {
     }
 
 }
+
+/* =====================================================
+   NUEVO FONDO — BEIGE ELEGANTE TIPO AGUA
+===================================================== */
+
+body {
+    background: #eee3d2;
+}
+
+
+/*
+   Fondo principal.
+   Movimiento lento y continuo para dar sensación
+   de seda/agua sin resultar demasiado llamativo.
+*/
+
+.fondo-movimiento {
+
+    position: fixed;
+
+    inset: -12%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -10;
+
+    background:
+
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(255,255,255,.92) 0%,
+            rgba(255,255,255,.48) 18%,
+            transparent 46%
+        ),
+
+        radial-gradient(
+            ellipse at 82% 25%,
+            rgba(222,202,171,.48) 0%,
+            rgba(222,202,171,.22) 25%,
+            transparent 52%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 80%,
+            rgba(255,249,237,.82) 0%,
+            rgba(255,249,237,.35) 25%,
+            transparent 55%
+        ),
+
+        radial-gradient(
+            ellipse at 20% 78%,
+            rgba(211,190,157,.34) 0%,
+            rgba(211,190,157,.14) 28%,
+            transparent 55%
+        ),
+
+        linear-gradient(
+            125deg,
+            #f4ecdf 0%,
+            #eadfce 25%,
+            #f1e6d5 48%,
+            #e8dbc7 70%,
+            #f5eee3 100%
+        );
+
+    background-size:
+        170% 170%,
+        160% 160%,
+        180% 180%,
+        165% 165%,
+        230% 230%;
+
+    background-position:
+        0% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        50% 50%;
+
+    animation:
+        fondoAguaElegante 32s ease-in-out infinite;
+
+}
+
+
+/*
+   Capa de luz.
+*/
+
+.fondo-movimiento::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -15%;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 25% 40%,
+            rgba(255,255,255,.35),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 60%,
+            rgba(205,182,147,.18),
+            transparent 36%
+        );
+
+    filter:
+        blur(55px);
+
+    opacity: .8;
+
+    animation:
+        aguaLuz 24s ease-in-out infinite alternate;
+
+}
+
+
+/*
+   Otra capa muy suave para evitar que el fondo
+   parezca completamente estático.
+*/
+
+.fondo-movimiento::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,.12) 45%,
+            transparent 65%
+        );
+
+    filter:
+        blur(25px);
+
+    opacity: .7;
+
+    animation:
+        reflejoAgua 28s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   MANCHAS DEL FONDO
+   Más suaves para que parezca agua y no humo.
+===================================================== */
+
+.mancha {
+
+    filter:
+        blur(125px);
+
+    opacity:
+        .14;
+
+}
+
+
+.mancha-1 {
+
+    animation:
+        aguaMancha1 28s ease-in-out infinite;
+
+}
+
+
+.mancha-2 {
+
+    animation:
+        aguaMancha2 34s ease-in-out infinite;
+
+}
+
+
+.mancha-3 {
+
+    animation:
+        aguaMancha3 38s ease-in-out infinite;
+
+}
+
+
+.mancha-4 {
+
+    animation:
+        aguaMancha4 31s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN DEL FONDO
+===================================================== */
+
+@keyframes fondoAguaElegante {
+
+    0% {
+
+        background-position:
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            50% 50%;
+
+    }
+
+    25% {
+
+        background-position:
+            14% 8%,
+            86% 15%,
+            91% 86%,
+            8% 72%,
+            57% 43%;
+
+    }
+
+    50% {
+
+        background-position:
+            27% 20%,
+            67% 30%,
+            70% 70%,
+            25% 57%,
+            43% 61%;
+
+    }
+
+    75% {
+
+        background-position:
+            12% 31%,
+            91% 51%,
+            79% 30%,
+            4% 84%,
+            55% 35%;
+
+    }
+
+    100% {
+
+        background-position:
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            50% 50%;
+
+    }
+
+}
+
+
+@keyframes aguaLuz {
+
+    0% {
+
+        transform:
+            translate3d(
+                -3%,
+                -2%,
+                0
+            )
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                4%,
+                3%,
+                0
+            )
+            scale(1.06);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                -2%,
+                5%,
+                0
+            )
+            scale(1.03);
+
+    }
+
+}
+
+
+@keyframes reflejoAgua {
+
+    0% {
+
+        transform:
+            translate3d(
+                -8%,
+                -4%,
+                0
+            )
+            rotate(-2deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                7%,
+                4%,
+                0
+            )
+            rotate(2deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                -5%,
+                2%,
+                0
+            )
+            rotate(-1deg);
+
+    }
+
+}
+
+
+@keyframes aguaMancha1 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(90px,55px)
+            scale(1.10);
+
+    }
+
+}
+
+
+@keyframes aguaMancha2 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-90px,55px)
+            scale(1.08);
+
+    }
+
+}
+
+
+@keyframes aguaMancha3 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(70px,-65px)
+            scale(1.10);
+
+    }
+
+}
+
+
+@keyframes aguaMancha4 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            scale(.9);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-55px,40px)
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =====================================================
+   QUITAR LAS DECORACIONES SVG ANTIGUAS
+   SIN TOCAR SU ESTRUCTURA NI POSICIONES
+===================================================== */
+
+.decor {
+
+    display:
+        none !important;
+
+}
+
+
+/* =====================================================
+   NUEVAS DECORACIONES PNG
+===================================================== */
+
+.decoraciones-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.decoracion-imagen {
+
+    position: absolute;
+
+    display: block;
+
+    width: auto;
+
+    height: auto;
+
+    max-width: 180px;
+
+    max-height: 180px;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    will-change:
+        transform,
+        opacity;
+
+    filter:
+        drop-shadow(
+            0 12px 25px
+            rgba(96,75,45,.08)
+        );
+
+}
+
+
+/*
+   Cada imagen tiene una duración ligeramente
+   diferente para que no aparezcan todas juntas.
+*/
+
+.decoracion-1 {
+
+    left: 5%;
+
+    top: 12%;
+
+    animation:
+        decoracionFlotante1
+        13s
+        ease-in-out
+        infinite;
+
+}
+
+
+.decoracion-2 {
+
+    right: 7%;
+
+    top: 18%;
+
+    animation:
+        decoracionFlotante2
+        16s
+        ease-in-out
+        infinite;
+
+}
+
+
+.decoracion-3 {
+
+    left: 8%;
+
+    bottom: 12%;
+
+    animation:
+        decoracionFlotante3
+        15s
+        ease-in-out
+        infinite;
+
+}
+
+
+.decoracion-4 {
+
+    right: 5%;
+
+    bottom: 9%;
+
+    animation:
+        decoracionFlotante4
+        18s
+        ease-in-out
+        infinite;
+
+}
+
+
+.decoracion-5 {
+
+    left: 42%;
+
+    top: 7%;
+
+    animation:
+        decoracionFlotante5
+        20s
+        ease-in-out
+        infinite;
+
+}
+
+
+.decoracion-6 {
+
+    right: 34%;
+
+    bottom: 5%;
+
+    animation:
+        decoracionFlotante6
+        17s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =====================================================
+   MOVIMIENTO SUAVE DE CADA DECORACIÓN
+===================================================== */
+
+@keyframes decoracionFlotante1 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                -8px,
+                8px,
+                0
+            )
+            rotate(-3deg)
+            scale(.96);
+
+    }
+
+    15% {
+
+        opacity: .48;
+
+    }
+
+    50% {
+
+        opacity: .58;
+
+        transform:
+            translate3d(
+                8px,
+                -5px,
+                0
+            )
+            rotate(1deg)
+            scale(1);
+
+    }
+
+    82% {
+
+        opacity: .28;
+
+    }
+
+}
+
+
+@keyframes decoracionFlotante2 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                7px,
+                7px,
+                0
+            )
+            rotate(3deg)
+            scale(.97);
+
+    }
+
+    18% {
+
+        opacity: .42;
+
+    }
+
+    52% {
+
+        opacity: .55;
+
+        transform:
+            translate3d(
+                -7px,
+                -6px,
+                0
+            )
+            rotate(-1deg)
+            scale(1.02);
+
+    }
+
+    84% {
+
+        opacity: .25;
+
+    }
+
+}
+
+
+@keyframes decoracionFlotante3 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                -5px,
+                6px,
+                0
+            )
+            rotate(2deg)
+            scale(.96);
+
+    }
+
+    20% {
+
+        opacity: .45;
+
+    }
+
+    55% {
+
+        opacity: .56;
+
+        transform:
+            translate3d(
+                6px,
+                -7px,
+                0
+            )
+            rotate(-2deg)
+            scale(1.01);
+
+    }
+
+    85% {
+
+        opacity: .24;
+
+    }
+
+}
+
+
+@keyframes decoracionFlotante4 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                8px,
+                5px,
+                0
+            )
+            rotate(-2deg)
+            scale(.97);
+
+    }
+
+    17% {
+
+        opacity: .43;
+
+    }
+
+    50% {
+
+        opacity: .56;
+
+        transform:
+            translate3d(
+                -6px,
+                -7px,
+                0
+            )
+            rotate(2deg)
+            scale(1.02);
+
+    }
+
+    80% {
+
+        opacity: .25;
+
+    }
+
+}
+
+
+@keyframes decoracionFlotante5 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                0,
+                8px,
+                0
+            )
+            rotate(-2deg)
+            scale(.95);
+
+    }
+
+    20% {
+
+        opacity: .38;
+
+    }
+
+    52% {
+
+        opacity: .52;
+
+        transform:
+            translate3d(
+                -5px,
+                -5px,
+                0
+            )
+            rotate(2deg)
+            scale(1.01);
+
+    }
+
+    84% {
+
+        opacity: .20;
+
+    }
+
+}
+
+
+@keyframes decoracionFlotante6 {
+
+    0%,
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                -6px,
+                5px,
+                0
+            )
+            rotate(2deg)
+            scale(.96);
+
+    }
+
+    18% {
+
+        opacity: .40;
+
+    }
+
+    50% {
+
+        opacity: .54;
+
+        transform:
+            translate3d(
+                6px,
+                -6px,
+                0
+            )
+            rotate(-2deg)
+            scale(1.01);
+
+    }
+
+    82% {
+
+        opacity: .23;
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTADOR
+   NO MODIFICA LA POSICIÓN DE LOS BOTONES
+===================================================== */
+
+.contador-boda {
+
+    position: relative;
+
+    z-index: 6;
+
+    margin:
+        34px auto
+        0;
+
+    text-align: center;
+
+}
+
+
+.contador-titulo {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        4px;
+
+    color:
+        #8e7957;
+
+}
+
+
+.contador-valores {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+}
+
+
+.contador-unidad {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 62px;
+
+}
+
+
+.contador-unidad strong {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        30px;
+
+    line-height:
+        1;
+
+    font-weight:
+        400;
+
+    color:
+        var(--dorado);
+
+}
+
+
+.contador-unidad span {
+
+    margin-top:
+        5px;
+
+    font-size:
+        7px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #756d61;
+
+}
+
+
+.contador-valores > i {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        25px;
+
+    font-style:
+        normal;
+
+    font-weight:
+        300;
+
+    color:
+        rgba(185,154,98,.65);
+
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media(max-width:700px) {
+
+    .decoracion-imagen {
+
+        max-width:
+            120px;
+
+        max-height:
+            120px;
+
+    }
+
+
+    .decoracion-1 {
+
+        left:
+            -5%;
+
+    }
+
+
+    .decoracion-2 {
+
+        right:
+            -4%;
+
+    }
+
+
+    .decoracion-3 {
+
+        left:
+            -3%;
+
+    }
+
+
+    .decoracion-4 {
+
+        right:
+            -3%;
+
+    }
+
+
+    .decoracion-5 {
+
+        left:
+            38%;
+
+    }
+
+
+    .decoracion-6 {
+
+        right:
+            28%;
+
+    }
+
+
+    .contador-boda {
+
+        margin-top:
+            30px;
+
+    }
+
+
+    .contador-valores {
+
+        gap:
+            8px;
+
+    }
+
+
+    .contador-unidad {
+
+        min-width:
+            55px;
+
+    }
+
+
+    .contador-unidad strong {
+
+        font-size:
+            26px;
+
+    }
+
+
+    .contador-valores > i {
+
+        font-size:
+            21px;
+
+    }
+
+}

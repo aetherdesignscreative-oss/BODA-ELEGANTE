@@ -488,3 +488,107 @@ document.addEventListener(
 
     }
 );
+
+/* =====================================================
+   CONTADOR DE BODA
+   28 DE SEPTIEMBRE DE 2026 — 18:00 HRS.
+   HORA DE GUATEMALA: UTC-06:00
+===================================================== */
+
+const fechaFinalBoda =
+    new Date("2026-09-28T18:00:00-06:00").getTime();
+
+
+const contadorDias =
+    document.getElementById("contadorDias");
+
+const contadorHoras =
+    document.getElementById("contadorHoras");
+
+const contadorMinutos =
+    document.getElementById("contadorMinutos");
+
+
+function actualizarContador() {
+
+    const ahora =
+        Date.now();
+
+    let diferencia =
+        fechaFinalBoda - ahora;
+
+
+    /*
+       Cuando llegue la fecha final,
+       el contador NO vuelve a comenzar.
+       Se queda permanentemente en 00 / 00 / 00.
+    */
+
+    if (diferencia <= 0) {
+
+        contadorDias.textContent =
+            "00";
+
+        contadorHoras.textContent =
+            "00";
+
+        contadorMinutos.textContent =
+            "00";
+
+        return;
+
+    }
+
+
+    const minutosTotales =
+        Math.floor(
+            diferencia / 60000
+        );
+
+
+    const dias =
+        Math.floor(
+            minutosTotales / 1440
+        );
+
+
+    const horas =
+        Math.floor(
+            (minutosTotales % 1440) / 60
+        );
+
+
+    const minutos =
+        minutosTotales % 60;
+
+
+    contadorDias.textContent =
+        String(dias).padStart(2, "0");
+
+
+    contadorHoras.textContent =
+        String(horas).padStart(2, "0");
+
+
+    contadorMinutos.textContent =
+        String(minutos).padStart(2, "0");
+
+}
+
+
+/*
+   Primera actualización inmediata
+*/
+
+actualizarContador();
+
+
+/*
+   Se actualiza cada segundo para que
+   nunca dependa de cuándo se abrió la página.
+*/
+
+setInterval(
+    actualizarContador,
+    1000
+);
