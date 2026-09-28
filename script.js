@@ -644,30 +644,38 @@ if (btnCalendario) {
 
 
         /* ==========================================
-           ANDROID
-           GOOGLE CALENDAR
-        ========================================== */
+            ANDROID
+             INTENTAR ABRIR LA APP GOOGLE CALENDAR
+         ========================================== */
 
         if (esAndroid) {
 
-            const urlGoogle =
-                "https://calendar.google.com/calendar/render" +
-                "?action=TEMPLATE" +
-                "&text=" +
-                encodeURIComponent(titulo) +
-                "&dates=" +
-                inicio +
-                "/" +
-                fin +
-                "&details=" +
-                encodeURIComponent(descripcion) +
-                "&location=" +
-                encodeURIComponent(ubicacion);
+    const tituloGoogle =
+        encodeURIComponent(titulo);
 
-            window.location.href = urlGoogle;
+    const descripcionGoogle =
+        encodeURIComponent(descripcion);
 
-            return;
-        }
+    const ubicacionGoogle =
+        encodeURIComponent(ubicacion);
+
+    const intentUrl =
+        "intent://calendar.google.com/calendar/render" +
+        "?action=TEMPLATE" +
+        "&text=" + tituloGoogle +
+        "&dates=" + inicio + "/" + fin +
+        "&details=" + descripcionGoogle +
+        "&location=" + ubicacionGoogle +
+        "#Intent;" +
+        "scheme=https;" +
+        "package=com.google.android.calendar;" +
+        "end";
+
+    window.location.href = intentUrl;
+
+    return;
+}
+
 
 
         /* ==========================================
