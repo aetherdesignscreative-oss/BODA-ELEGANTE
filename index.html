@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Jonny & Pancrasia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Italianno&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div id="transicion" class="transicion">
+
+    <div class="transicion-linea"></div>
+
+    <div class="transicion-texto">
+        <span>J</span>
+        <i>&</i>
+        <span>P</span>
+    </div>
+
+</div>
+
+
+
+<svg
+    class="iconos-definiciones"
+    xmlns="http://www.w3.org/2000/svg"
+>
+
+    <defs>
+
+        <symbol id="anillo" viewBox="0 0 200 200">
+
+            <circle
+                cx="100"
+                cy="118"
+                r="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="100"
+                cy="65"
+                r="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M83 82 L100 105 L117 82"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M87 81 L100 98 L113 81"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+            />
+
+        </symbol>
+
+
+        <symbol id="copa" viewBox="0 0 200 300">
+
+            <path
+                d="M40 35
+                   C45 100 60 130 100 130
+                   C140 130 155 100 160 35
+                   Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <line
+                x1="100"
+                y1="130"
+                x2="100"
+                y2="255"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M65 255 H135"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M50 75
+                   C70 90 130 90 150 75"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+            />
+
+        </symbol>
+
+
+        <symbol id="botella" viewBox="0 0 180 350">
+
+            <path
+                d="
+                M72 20
+                H108
+                V75
+
+                C108 88 125 100 132 120
+
+                L150 290
+
+                C151 307 137 320 120 320
+
+                H60
+
+                C43 320 29 307 30 290
+
+                L48 120
+
+                C55 100 72 88 72 75
+
+                Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M48 150 H132"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+            />
+
+            <rect
+                x="53"
+                y="175"
+                width="74"
+                height="70"
+                rx="2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+            />
+
+            <text
+                x="90"
+                y="210"
+                text-anchor="middle"
+                font-size="14"
+                fill="currentColor"
+            >
+                JP
+            </text>
+
+            <path
+                d="M65 20 H115"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+        </symbol>
+
+
+        <symbol id="ramo" viewBox="0 0 300 250">
+
+            <path
+                d="M20 220
+                   C80 160 110 110 160 25"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M78 155
+                   C45 125 40 90 45 65
+                   C75 78 92 108 78 155Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M105 115
+                   C100 80 120 48 145 35
+                   C155 68 142 95 105 115Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M53 183
+                   C25 168 12 140 15 120
+                   C42 127 57 151 53 183Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <path
+                d="M120 88
+                   C150 70 180 72 198 88
+                   C175 105 145 104 120 88Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="160"
+                cy="25"
+                r="10"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="177"
+                cy="28"
+                r="7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+            />
+
+        </symbol>
+
+    </defs>
+
+</svg>
+
+
+
+<!-- FONDO -->
+
+<div class="fondo-movimiento">
+
+    <div class="mancha mancha-1"></div>
+    <div class="mancha mancha-2"></div>
+    <div class="mancha mancha-3"></div>
+    <div class="mancha mancha-4"></div>
+
+</div>
+
+
+
+<section id="inicio" class="pantalla inicio">
+
+    <div class="decor decor-anillo">
+        <svg>
+            <use href="#anillo"></use>
+        </svg>
+    </div>
+
+    <div class="decor decor-copa">
+        <svg>
+            <use href="#copa"></use>
+        </svg>
+    </div>
+
+    <div class="decor decor-ramo">
+        <svg>
+            <use href="#ramo"></use>
+        </svg>
+    </div>
+
+
+    <div class="inicio-contenido">
+
+        <p class="microtexto">
+            THE WEDDING OF
+        </p>
+
+        <h1>
+            Jonny
+            <span>&</span>
+            Pancrasia
+        </h1>
+
+        <div class="linea-elegante">
+            <span></span>
+            <b>✦</b>
+            <span></span>
+        </div>
+
+        <p class="frase-inicio">
+            Una historia que comienza<br>
+            con un sí para siempre.
+        </p>
+
+
+        <div class="bota-container">
+
+            <img
+                src="assets/bota.png"
+                alt="Bota elegante"
+                class="bota"
+            >
+
+        </div>
+
+
+        <button
+            id="btnComenzar"
+            class="btn-lujo"
+        >
+
+            <span>COMENZAR</span>
+
+            <i>→</i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="musica"
+    class="pantalla selector oculto"
+>
+
+    <div class="decor decor-botella">
+        <svg>
+            <use href="#botella"></use>
+        </svg>
+    </div>
+
+    <div class="decor decor-anillo-2">
+        <svg>
+            <use href="#anillo"></use>
+        </svg>
+    </div>
+
+
+    <div class="contenido-selector">
+
+        <p class="microtexto">
+            JONNY & PANCRASIA
+        </p>
+
+        <h2>
+            Elige nuestra<br>
+            <em>melodía</em>
+        </h2>
+
+        <div class="linea-elegante">
+            <span></span>
+            <b>✦</b>
+            <span></span>
+        </div>
+
+        <p class="texto-suave">
+            Escoge la canción que quieres que<br>
+            acompañe este momento.
+        </p>
+
+
+        <div class="lista-canciones">
+
+            <button
+                class="cancion"
+                data-song="assets/cancion1.mp3"
+                data-name="Nuestra canción"
+            >
+                <span class="numero">01</span>
+                <span class="nombre-cancion">Nuestra canción</span>
+                <span class="flecha">→</span>
+            </button>
+
+
+            <button
+                class="cancion"
+                data-song="assets/cancion2.mp3"
+                data-name="Siempre contigo"
+            >
+                <span class="numero">02</span>
+                <span class="nombre-cancion">Siempre contigo</span>
+                <span class="flecha">→</span>
+            </button>
+
+
+            <button
+                class="cancion"
+                data-song="assets/cancion3.mp3"
+                data-name="Nuestro amor"
+            >
+                <span class="numero">03</span>
+                <span class="nombre-cancion">Nuestro amor</span>
+                <span class="flecha">→</span>
+            </button>
+
+
+            <button
+                class="cancion"
+                data-song="assets/cancion4.mp3"
+                data-name="Para siempre"
+            >
+                <span class="numero">04</span>
+                <span class="nombre-cancion">Para siempre</span>
+                <span class="flecha">→</span>
+            </button>
+
+
+            <button
+                class="cancion"
+                data-song="assets/cancion5.mp3"
+                data-name="El día de nuestra boda"
+            >
+                <span class="numero">05</span>
+                <span class="nombre-cancion">El día de nuestra boda</span>
+                <span class="flecha">→</span>
+            </button>
+
+        </div>
+
+
+        <div class="paleta-seccion">
+
+            <p>PALETAS DE COLOR</p>
+
+            <div class="paletas">
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#f7f3ea"></i>
+                        <i style="background:#ead9bc"></i>
+                        <i style="background:#c6a66a"></i>
+                    </div>
+                    <span>Marfil · Champagne · Dorado</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#ead6b4"></i>
+                        <i style="background:#d8c4a7"></i>
+                        <i style="background:#c4a76c"></i>
+                    </div>
+                    <span>Champagne · Beige · Dorado</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#181818"></i>
+                        <i style="background:#faf8f3"></i>
+                        <i style="background:#c5a15e"></i>
+                    </div>
+                    <span>Negro · Blanco · Dorado</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#a5ad98"></i>
+                        <i style="background:#f3eee3"></i>
+                        <i style="background:#c5a15e"></i>
+                    </div>
+                    <span>Salvia · Marfil · Dorado</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#6a3039"></i>
+                        <i style="background:#ead8bc"></i>
+                        <i style="background:#f7f1e8"></i>
+                    </div>
+                    <span>Borgoña · Champagne · Marfil</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#192d45"></i>
+                        <i style="background:#fafafa"></i>
+                        <i style="background:#c5a15e"></i>
+                    </div>
+                    <span>Azul · Blanco · Dorado</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#d7b9b5"></i>
+                        <i style="background:#f5eee4"></i>
+                        <i style="background:#e4cfad"></i>
+                    </div>
+                    <span>Rosa · Marfil · Champagne</span>
+                </div>
+
+
+                <div class="paleta">
+                    <div>
+                        <i style="background:#9c9081"></i>
+                        <i style="background:#eee7db"></i>
+                        <i style="background:#c5a15e"></i>
+                    </div>
+                    <span>Taupe · Crema · Dorado</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="carta"
+    class="pantalla carta oculto"
+>
+
+    <div class="decor decor-copa-2">
+        <svg>
+            <use href="#copa"></use>
+        </svg>
+    </div>
+
+    <div class="decor decor-ramo-2">
+        <svg>
+            <use href="#ramo"></use>
+        </svg>
+    </div>
+
+
+    <div class="carta-contenedor">
+
+        <div class="carta-marco">
+
+            <div class="sello">
+                J
+                <span>&</span>
+                P
+            </div>
+
+            <p class="microtexto">
+                UNA INVITACIÓN ESPECIAL
+            </p>
+
+            <h2>
+                Para<br>
+                <em>ti</em>
+            </h2>
+
+            <div class="linea-elegante">
+                <span></span>
+                <b>❦</b>
+                <span></span>
+            </div>
+
+            <p class="carta-texto">
+                Hay momentos que merecen<br>
+                ser compartidos.
+            </p>
+
+            <button
+                id="btnPresionar"
+                class="btn-lujo btn-carta"
+            >
+                <span>PRESIÓNAME</span>
+                <i>♡</i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<main
+    id="invitacion"
+    class="invitacion oculto"
+>
+
+    <div class="decor decor-anillo-final">
+        <svg>
+            <use href="#anillo"></use>
+        </svg>
+    </div>
+
+    <div class="decor decor-botella-final">
+        <svg>
+            <use href="#botella"></use>
+        </svg>
+    </div>
+
+
+    <div class="invitacion-hoja">
+
+        <p class="microtexto">
+            CON GRAN ALEGRÍA
+        </p>
+
+        <h1>
+            Tenemos el honor<br>
+            de invitarte a
+        </h1>
+
+        <div class="ornamento">
+            ❦
+        </div>
+
+        <p class="texto-invitacion">
+            celebrar junto a nosotros<br>
+            el comienzo de una nueva historia.
+        </p>
+
+        <div class="nombres">
+            <span>Jonny</span>
+            <b>&</b>
+            <span>Pancrasia</span>
+        </div>
+
+        <div class="fecha">
+
+            <div>
+                <small>SÁBADO</small>
+                <strong>24</strong>
+                <small>OCTUBRE</small>
+            </div>
+
+            <span></span>
+
+            <div>
+                <small>2026</small>
+                <strong>♡</strong>
+                <small>18:00 HRS.</small>
+            </div>
+
+        </div>
+
+
+        <div class="lugar">
+            <span>✦</span>
+            <p>LUGAR DE LA CELEBRACIÓN</p>
+            <span>✦</span>
+        </div>
+
+        <p class="direccion">
+            Ciudad · Guatemala
+        </p>
+
+
+        <div class="botones-finales">
+
+            <button
+                id="btnMusica"
+                class="boton-final"
+            >
+                <span>♫</span>
+                <small>MÚSICA</small>
+            </button>
+
+
+            <button
+                id="btnGaleria"
+                class="boton-final"
+            >
+                <span>▧</span>
+                <small>GALERÍA</small>
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<div
+    id="panelMusica"
+    class="modal"
+>
+
+    <div class="modal-contenido">
+
+        <button
+            id="cerrarMusica"
+            class="cerrar"
+        >
+            ×
+        </button>
+
+        <p class="microtexto">
+            MÚSICA
+        </p>
+
+        <h2>
+            Nuestra melodía
+        </h2>
+
+        <p
+            id="cancionActual"
+            class="cancion-actual"
+        >
+            Selecciona una canción
+        </p>
+
+
+        <div class="mini-canciones">
+
+            <button
+                data-song="assets/cancion1.mp3"
+                data-name="Nuestra canción"
+            >
+                01 · Nuestra canción
+            </button>
+
+            <button
+                data-song="assets/cancion2.mp3"
+                data-name="Siempre contigo"
+            >
+                02 · Siempre contigo
+            </button>
+
+            <button
+                data-song="assets/cancion3.mp3"
+                data-name="Nuestro amor"
+            >
+                03 · Nuestro amor
+            </button>
+
+            <button
+                data-song="assets/cancion4.mp3"
+                data-name="Para siempre"
+            >
+                04 · Para siempre
+            </button>
+
+            <button
+                data-song="assets/cancion5.mp3"
+                data-name="El día de nuestra boda"
+            >
+                05 · El día de nuestra boda
+            </button>
+
+        </div>
+
+
+        <div class="reproductor">
+
+            <button
+                id="btnPlay"
+                class="play"
+            >
+                ▶
+            </button>
+
+            <div class="barra">
+                <div id="barraProgreso"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div
+    id="panelGaleria"
+    class="modal"
+>
+
+    <div class="modal-contenido galeria-modal">
+
+        <button
+            id="cerrarGaleria"
+            class="cerrar"
+        >
+            ×
+        </button>
+
+        <p class="microtexto">
+            NUESTROS MOMENTOS
+        </p>
+
+        <h2>
+            Galería
+        </h2>
+
+
+        <div class="galeria">
+
+            <div class="foto foto-grande">
+                <img src="assets/foto1.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto2.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto3.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto4.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto5.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto6.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto7.jpg">
+            </div>
+
+            <div class="foto">
+                <img src="assets/foto8.jpg">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
